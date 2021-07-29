@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{B82B5D62-5BAF-4D6D-BB4C-BF163843D03B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spectacular", "Src\Spectacular\Spectacular.csproj", "{14B1C21B-DD99-493B-A951-755EA064746B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionFolder", "SolutionFolder", "{679EA54F-B466-48E6-A924-6D0BD847A3C3}"
+ProjectSection(SolutionItems) = preProject
+	.gitattributes = .gitattributes
+	.gitignore = .gitignore
+	Directory.Build.props = Directory.Build.props
+	.config\dotnet-tools.json = .config\dotnet-tools.json
+EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CI", "CI", "{0974973F-3C01-4F6C-9B65-6182C3D59302}"
+ProjectSection(SolutionItems) = preProject
+	build.cake = build.cake
+	build.sh = build.sh
+	.github\workflows\github.yml = .github\workflows\github.yml
+EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Doc", "Doc", "{877BF7E9-FDEB-466F-BA3A-EB2927576D53}"
+ProjectSection(SolutionItems) = preProject
+	ReadMe.md = ReadMe.md
+	icon.png = icon.png
+EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{00BD6AE3-9AFE-4E56-BD54-FE7DB9538D38}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spectacular.UnitTest", "Tests\Spectacular.UnitTest\Spectacular.UnitTest.csproj", "{84BEF995-88DF-4581-8E9D-1DED44FDE745}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{052258B7-EF27-47CE-A7EC-F0ECF7811F33}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples.UserManagement", "Samples.UserManagement", "{AAEB992C-A00B-44BE-9032-1FF7CC54647C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserManagement.Api", "Samples\UserManagement\UserManagement.Api\UserManagement.Api.csproj", "{C29C8019-D89A-4527-A8F8-29A27BAC1136}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{14B1C21B-DD99-493B-A951-755EA064746B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14B1C21B-DD99-493B-A951-755EA064746B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14B1C21B-DD99-493B-A951-755EA064746B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14B1C21B-DD99-493B-A951-755EA064746B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84BEF995-88DF-4581-8E9D-1DED44FDE745}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84BEF995-88DF-4581-8E9D-1DED44FDE745}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84BEF995-88DF-4581-8E9D-1DED44FDE745}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84BEF995-88DF-4581-8E9D-1DED44FDE745}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C29C8019-D89A-4527-A8F8-29A27BAC1136}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C29C8019-D89A-4527-A8F8-29A27BAC1136}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C29C8019-D89A-4527-A8F8-29A27BAC1136}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C29C8019-D89A-4527-A8F8-29A27BAC1136}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{14B1C21B-DD99-493B-A951-755EA064746B} = {B82B5D62-5BAF-4D6D-BB4C-BF163843D03B}
+		{84BEF995-88DF-4581-8E9D-1DED44FDE745} = {00BD6AE3-9AFE-4E56-BD54-FE7DB9538D38}
+		{AAEB992C-A00B-44BE-9032-1FF7CC54647C} = {052258B7-EF27-47CE-A7EC-F0ECF7811F33}
+		{C29C8019-D89A-4527-A8F8-29A27BAC1136} = {AAEB992C-A00B-44BE-9032-1FF7CC54647C}
+	EndGlobalSection
+EndGlobal
