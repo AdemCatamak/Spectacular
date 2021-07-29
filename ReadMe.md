@@ -21,11 +21,14 @@ For more information about the Specification Design Pattern, you can check the [
 | Spectacular | ![Nuget](https://img.shields.io/nuget/v/Spectacular.svg) | 
 
 
+## Give a Star! :star:
+If you like this project please give it a star :blush:
+
 ## Getting Started
 
 Preparing custom specification via `AbstractSpecification`
 
-```
+```CSharp
 public class GenderShould : AbstractSpecification<Person>
 {
     private GenderShould(Genders gender)
@@ -46,7 +49,7 @@ public class GenderShould : AbstractSpecification<Person>
 
 Checking whether an object satisfy the criteria :
 
-```
+```CSharp
 Person person = new("adem", Genders.Male);
 
 AbstractSpecification<Person> spec = GenderShould.BeMale;
@@ -55,10 +58,18 @@ bool isSatisfied = spec.IsSatisfiedBy(person);
 
 Filtering the collection by criteria :
 
-```
-IQueryable<Person>? personCollection = ...
+```CSharp
+IQueryable<Person> personCollection = ...
 
 AbstractSpecification<Person> spec = GenderShould.BeMale;
 var filteredCollection = personCollection.Where(spec).ToList();
 ```
 
+Combine criteria : 
+
+```CSharp
+var complexSpec = AgeShould.BeGreaterThan(18).And(AgeShould.BeLessThan(35));
+complexSpec = complexSpec.Or(GenderShould.BeFemale);
+
+var filteredCollection = personCollection.Where(complexSpec).ToList();
+```
