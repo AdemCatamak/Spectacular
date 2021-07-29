@@ -29,6 +29,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{00BD6AE3
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spectacular.UnitTest", "Tests\Spectacular.UnitTest\Spectacular.UnitTest.csproj", "{84BEF995-88DF-4581-8E9D-1DED44FDE745}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{052258B7-EF27-47CE-A7EC-F0ECF7811F33}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples.UserManagement", "Samples.UserManagement", "{AAEB992C-A00B-44BE-9032-1FF7CC54647C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserManagement.Api", "Samples\UserManagement\UserManagement.Api\UserManagement.Api.csproj", "{C29C8019-D89A-4527-A8F8-29A27BAC1136}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,9 +49,15 @@ Global
 		{84BEF995-88DF-4581-8E9D-1DED44FDE745}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84BEF995-88DF-4581-8E9D-1DED44FDE745}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84BEF995-88DF-4581-8E9D-1DED44FDE745}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C29C8019-D89A-4527-A8F8-29A27BAC1136}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C29C8019-D89A-4527-A8F8-29A27BAC1136}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C29C8019-D89A-4527-A8F8-29A27BAC1136}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C29C8019-D89A-4527-A8F8-29A27BAC1136}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{14B1C21B-DD99-493B-A951-755EA064746B} = {B82B5D62-5BAF-4D6D-BB4C-BF163843D03B}
 		{84BEF995-88DF-4581-8E9D-1DED44FDE745} = {00BD6AE3-9AFE-4E56-BD54-FE7DB9538D38}
+		{AAEB992C-A00B-44BE-9032-1FF7CC54647C} = {052258B7-EF27-47CE-A7EC-F0ECF7811F33}
+		{C29C8019-D89A-4527-A8F8-29A27BAC1136} = {AAEB992C-A00B-44BE-9032-1FF7CC54647C}
 	EndGlobalSection
 EndGlobal
