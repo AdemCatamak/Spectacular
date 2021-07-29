@@ -5,7 +5,7 @@ namespace Spectacular
 {
     public abstract class AbstractSpecification<TModel>
     {
-        public Expression<Func<TModel, bool>> Expression { get; }
+        internal Expression<Func<TModel, bool>> Expression { get; }
 
         private Func<TModel, bool>? _expressionFunc;
         private Func<TModel, bool> ExpressionFunc => _expressionFunc ??= Expression.Compile();
