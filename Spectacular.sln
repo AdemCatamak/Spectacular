@@ -17,6 +17,7 @@ ProjectSection(SolutionItems) = preProject
 	build.cake = build.cake
 	build.sh = build.sh
 	.github\workflows\github.yml = .github\workflows\github.yml
+	.travis.yml = .travis.yml
 EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Doc", "Doc", "{877BF7E9-FDEB-466F-BA3A-EB2927576D53}"
