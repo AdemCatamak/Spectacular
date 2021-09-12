@@ -5,7 +5,7 @@ This library is implementation of the Specification Design Pattern in C# languag
 `Expression` has been used in this implementation. Thanks to `Expression`, developers can use `Specification` for
 querying database through libraries such as `EntityFramework`.
 
-You can combine `Specification` classes through the `And` and `Or` operators included as built-In. Via these operators,
+You can combine `Specification` classes through the `And` operator included as built-In. Via these operator,
 you can easily create your complex queries by combining smaller criteria.
 
 For more information about the Specification Design Pattern, you can check the [story on medium.](https://medium.com/c-sharp-progarmming/specification-design-pattern-c814649be0ef)
@@ -69,7 +69,7 @@ Combine criteria :
 
 ```CSharp
 var ageCriteria = AgeShould.BeGreaterThan(18).And(AgeShould.BeLessThan(35));
-SpecificationGroup<Person> specificationGroup = ageCriteria.Or(GenderShould.BeFemale);
+SpecificationGroup<Person> specificationGroup = ageCriteria.And(GenderShould.BeFemale);
 
 var filteredCollection = personCollection.Where(specificationGroup).ToList();
 ```
