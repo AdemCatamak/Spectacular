@@ -14,7 +14,7 @@
         <Description>Implementation of Specification Design Pattern</Description>
         <PackageTags>specification;design pattern;</PackageTags>
 
-        <VersionPrefix>1.0.0</VersionPrefix>
+        <VersionPrefix>1.1.0</VersionPrefix>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
 
         <RepositoryUrl>https://github.com/AdemCatamak/Spectacular.git</RepositoryUrl>
@@ -22,7 +22,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <None Include="..\..\icon.png" Pack="true" PackagePath=""/>
+        <None Include="..\..\icon.png" Pack="true" PackagePath="" />
     </ItemGroup>
 
 </Project>
