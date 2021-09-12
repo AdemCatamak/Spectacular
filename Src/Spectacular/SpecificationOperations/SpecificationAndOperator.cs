@@ -1,41 +1,28 @@
-using System;
-using System.Linq;
-using System.Linq.Expressions;
+using Spectacular.ExpressionOperations;
 
 namespace Spectacular.SpecificationOperations
 {
-    internal class SpecificationCombineAndOperator : ISpecificationCombineOperator
-    {
-        // https://stackoverflow.com/questions/457316/combining-two-expressions-expressionfunct-bool
-        public AbstractSpecification<TModel> Combine<TModel>(AbstractSpecification<TModel> left, AbstractSpecification<TModel> right)
-        {
-            Expression<Func<TModel, bool>> resultExpression;
-            var param = left.Expression.Parameters.First();
-            if (ReferenceEquals(param, right.Expression.Parameters.First()))
-            {
-                resultExpression = Expression.Lambda<Func<TModel, bool>>(
-                                                                         Expression.AndAlso(left.Expression.Body, right.Expression.Body), param);
-            }
-            else
-            {
-                resultExpression = Expression.Lambda<Func<TModel, bool>>(
-                                                                         Expression.AndAlso(
-                                                                                            left.Expression.Body,
-                                                                                            Expression.Invoke(right.Expression, param)), param);
-            }
-
-            var combinedSpecification = new DynamicSpecification<TModel>(resultExpression);
-            return combinedSpecification;
-        }
-    }
-
     public static class ExpressionSpecificationAndOperatorExtension
     {
-        public static AbstractSpecification<T> And<T>(this AbstractSpecification<T> specificationLeft, AbstractSpecification<T> specificationRight)
+        public static SpecificationGroup<T> And<T>(this AbstractSpecification<T> specificationLeft, AbstractSpecification<T> specificationRight)
         {
-            var specificationAndOperator = new SpecificationCombineAndOperator();
-            var expressionSpecification = specificationAndOperator.Combine(specificationLeft, specificationRight);
-            return expressionSpecification;
+            var specificationAndOperator = new ExpressionAndOperator();
+            SpecificationGroup<T> specificationGroup = new(specificationLeft, specificationRight, specificationAndOperator);
+            return specificationGroup;
+        }
+
+        public static SpecificationGroup<T> And<T>(this SpecificationGroup<T> specificationGroupLeft, SpecificationGroup<T> specificationGroupRight)
+        {
+            var specificationAndOperator = new ExpressionAndOperator();
+            SpecificationGroup<T> result = new(specificationGroupLeft, specificationGroupRight, specificationAndOperator);
+            return result;
+        }
+
+        public static SpecificationGroup<T> And<T>(this SpecificationGroup<T> specificationGroup, AbstractSpecification<T> specification)
+        {
+            var specificationAndOperator = new ExpressionAndOperator();
+            SpecificationGroup<T> result = new(specificationGroup, specification, specificationAndOperator);
+            return result;
         }
     }
 }

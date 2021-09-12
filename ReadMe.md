@@ -68,8 +68,8 @@ var filteredCollection = personCollection.Where(spec).ToList();
 Combine criteria : 
 
 ```CSharp
-var complexSpec = AgeShould.BeGreaterThan(18).And(AgeShould.BeLessThan(35));
-complexSpec = complexSpec.Or(GenderShould.BeFemale);
+var ageCriteria = AgeShould.BeGreaterThan(18).And(AgeShould.BeLessThan(35));
+SpecificationGroup<Person> specificationGroup = ageCriteria.Or(GenderShould.BeFemale);
 
-var filteredCollection = personCollection.Where(complexSpec).ToList();
+var filteredCollection = personCollection.Where(specificationGroup).ToList();
 ```
