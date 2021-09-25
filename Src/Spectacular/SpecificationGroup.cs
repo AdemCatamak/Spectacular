@@ -9,6 +9,15 @@ namespace Spectacular
 
         private readonly List<AbstractSpecification<T>> _specifications;
 
+        internal SpecificationGroup(AbstractSpecification<T> abstractSpecification)
+            : base(abstractSpecification.Expression)
+        {
+            _specifications = new List<AbstractSpecification<T>>
+                              {
+                                  abstractSpecification
+                              };
+        }
+
         public SpecificationGroup(AbstractSpecification<T> abstractSpecificationLeft,
                                   AbstractSpecification<T> abstractSpecificationRight,
                                   IExpressionCombineOperator expressionCombineOperator)
@@ -26,7 +35,7 @@ namespace Spectacular
                                   IExpressionCombineOperator expressionCombineOperator)
             : base(expressionCombineOperator.Combine(specificationGroup.Expression, abstractSpecification.Expression))
         {
-            _specifications = new List<AbstractSpecification<T>>(specificationGroup._specifications)
+            _specifications = new List<AbstractSpecification<T>>(specificationGroup.AbstractSpecifications)
                               {
                                   abstractSpecification
                               };
@@ -37,8 +46,8 @@ namespace Spectacular
                                   IExpressionCombineOperator expressionCombineOperator)
             : base(expressionCombineOperator.Combine(specificationGroupLeft.Expression, specificationGroupRight.Expression))
         {
-            _specifications = new List<AbstractSpecification<T>>(specificationGroupLeft._specifications);
-            _specifications.AddRange(specificationGroupRight._specifications);
+            _specifications = new List<AbstractSpecification<T>>(specificationGroupLeft.AbstractSpecifications);
+            _specifications.AddRange(specificationGroupRight.AbstractSpecifications);
         }
     }
 }

@@ -14,7 +14,7 @@
         <Description>Implementation of Specification Design Pattern</Description>
         <PackageTags>specification;design pattern;</PackageTags>
 
-        <VersionPrefix>1.1.1</VersionPrefix>
+        <VersionPrefix>1.1.2</VersionPrefix>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
 
         <RepositoryUrl>https://github.com/AdemCatamak/Spectacular.git</RepositoryUrl>
